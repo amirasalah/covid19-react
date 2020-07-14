@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@material-ui/lab": "^4.0.0-alpha.56",
     "@testing-library/cypress": "^6.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^10.4.6",
@@ -21,7 +22,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "typescript": "~3.7.2",
-    "unstated": "^2.1.1",
+    "unstated-next": "^1.1.0",
     "yarn": "^1.22.4"
   },
   "scripts": {
