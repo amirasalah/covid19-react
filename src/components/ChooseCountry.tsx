@@ -2,7 +2,6 @@ import React from 'react'
 import axios from 'axios'
 import TextField from '@material-ui/core/TextField'
 import Autocomplete from '@material-ui/lab/Autocomplete'
-import { Typography } from '@material-ui/core'
 import { StoreContainer } from '../store'
 
 interface CountryType {
@@ -36,7 +35,6 @@ export const ChooseCountry = () => {
                     <TextField placeholder='Choose Country' {...params} />
                 )}
             />
-            <Typography>You selected : {country.selectedCountry}</Typography>
         </>
     )
 }

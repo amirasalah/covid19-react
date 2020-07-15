@@ -2,8 +2,8 @@ import React from 'react'
 import { StoreContainer } from '../store'
 import { Typography } from '@material-ui/core'
 import { ChooseCountry } from './ChooseCountry'
-import axios from 'axios'
 import { SummaryInformation } from './SummaryInformation'
+import axios from 'axios'
 
 interface ISummaryInformationContainer {
     selectedMethod: number
@@ -12,7 +12,6 @@ export const SummaryInformationContainer: React.FC<ISummaryInformationContainer>
     selectedMethod,
 }) => {
     const store = StoreContainer.useContainer()
-    const country = StoreContainer.useContainer()
     React.useEffect(() => {
         ;(async () => {
             const res = await axios('https://api.covid19api.com/summary')
@@ -26,7 +25,15 @@ export const SummaryInformationContainer: React.FC<ISummaryInformationContainer>
                 <>
                     <Typography>Select country</Typography>
                     <ChooseCountry />
-                    <Typography> {country.selectedCountry}</Typography>
+                    {/* <Typography> {store.selectedCountry}</Typography> */}
+                    {store.countriesSummary
+                        .filter(
+                            (country: { Country: string }) =>
+                                country.Country === store.selectedCountry,
+                        )
+                        .map(el => (
+                            <SummaryInformation summary={el} />
+                        ))}
                 </>
             ) : (
                 <>
