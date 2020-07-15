@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { createContainer } from 'unstated-next'
 
 export const useStore = () => {
-    const [selectedCountry, setSelectedCountry] = useState<string>('')
-    const changeCountry = (value: string) => {
-        setSelectedCountry(value)
+    const [selectedCountry, setSelectedCountry] = useState('')
+    const changeCountry = (country: string) => {
+        setSelectedCountry(country)
     }
     const [globalSummary, setGlobalSummary] = useState<any>()
     const changeGlobalSummary = (value: any) => {

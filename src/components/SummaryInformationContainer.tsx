@@ -1,9 +1,9 @@
 import React from 'react'
 import { StoreContainer } from '../store'
-import { Typography } from '@material-ui/core'
 import { ChooseCountry } from './ChooseCountry'
 import { SummaryInformation } from './SummaryInformation'
 import axios from 'axios'
+import { Typography } from '@material-ui/core'
 
 interface ISummaryInformationContainer {
     selectedMethod: number
@@ -23,24 +23,28 @@ export const SummaryInformationContainer: React.FC<ISummaryInformationContainer>
         <>
             {selectedMethod === 2 ? (
                 <>
-                    <Typography>Select country</Typography>
                     <ChooseCountry />
-                    {/* <Typography> {store.selectedCountry}</Typography> */}
                     {store.countriesSummary
                         .filter(
-                            (country: { Country: string }) =>
-                                country.Country === store.selectedCountry,
+                            (Country: any) =>
+                                Country.CountryCode === store.selectedCountry,
                         )
-                        .map(el => (
-                            <SummaryInformation summary={el} />
+                        .map((el: any) => (
+                            <>
+                                <Typography>{el.Country}</Typography>
+                                <SummaryInformation summary={el} />
+                            </>
                         ))}
                 </>
             ) : (
                 <>
-                    <Typography>World Summary</Typography>
                     <div>
                         {store.globalSummary && (
-                            <SummaryInformation summary={store.globalSummary} />
+                            <>
+                                <SummaryInformation
+                                    summary={store.globalSummary}
+                                />
+                            </>
                         )}
                     </div>
                 </>

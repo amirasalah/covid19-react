@@ -1,40 +1,34 @@
 import React from 'react'
-import axios from 'axios'
-import TextField from '@material-ui/core/TextField'
-import Autocomplete from '@material-ui/lab/Autocomplete'
+import { ResponsiveGeoMap } from '@nivo/geo'
+import countries from '../shared/worldCountries.json'
 import { StoreContainer } from '../store'
-
-interface CountryType {
-    Country: string
-    Slug: string
-    ISO2: string
-}
+import { Typography } from '@material-ui/core'
+import { Box } from '@material-ui/core'
 
 export const ChooseCountry = () => {
-    const [data, setData] = React.useState<CountryType[]>([])
-    const country = StoreContainer.useContainer()
+    const store = StoreContainer.useContainer()
 
-    React.useEffect(() => {
-        ;(async () => {
-            const res = await axios('https://api.covid19api.com/countries')
-            setData(res.data)
-        })()
-    }, [])
     return (
         <>
-            <Autocomplete
-                id='combo-box-demo'
-                options={data}
-                blurOnSelect={true}
-                getOptionLabel={option => option.Country}
-                onInputChange={(event: object, value: string, reason: string) =>
-                    country.changeCountry(value)
-                }
-                style={{ width: 300 }}
-                renderInput={params => (
-                    <TextField placeholder='Choose Country' {...params} />
-                )}
-            />
+            <div style={{ height: '500px' }}>
+                <Box marginBottom={2} marginTop={2}>
+                    <Typography align='center'>Select country</Typography>
+                </Box>
+                <div style={{ height: '300px' }}>
+                    <ResponsiveGeoMap
+                        features={countries.features}
+                        margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+                        projectionTranslation={[0.5, 0.5]}
+                        projectionRotation={[0, 0, 0]}
+                        fillColor='#eeeeee'
+                        borderWidth={0.5}
+                        borderColor='#333333'
+                        // enableGraticule={true}
+                        graticuleLineColor='#666666'
+                        onClick={event => store.changeCountry(event.id)}
+                    />
+                </div>
+            </div>
         </>
     )
 }
