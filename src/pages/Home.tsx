@@ -31,7 +31,7 @@ export const Home = () => {
             <Grid spacing={3} container>
                 {buttons.map((button, index) => {
                     return (
-                        <Grid item xs={6}>
+                        <Grid item xs={12}>
                             <Button
                                 variant='contained'
                                 color='primary'
@@ -46,7 +46,9 @@ export const Home = () => {
                 })}
             </Grid>
             {searchScope > 0 && (
-                <SummaryInformationContainer selectedMethod={searchScope} />
+                <Box marginBottom={5} marginTop={5}>
+                    <SummaryInformationContainer selectedMethod={searchScope} />
+                </Box>
             )}
         </>
     )

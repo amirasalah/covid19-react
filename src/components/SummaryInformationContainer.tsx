@@ -3,7 +3,7 @@ import { StoreContainer } from '../store'
 import { ChooseCountry } from './ChooseCountry'
 import { SummaryInformation } from './SummaryInformation'
 import axios from 'axios'
-import { Typography } from '@material-ui/core'
+import { Typography, Box } from '@material-ui/core'
 
 interface ISummaryInformationContainer {
     selectedMethod: number
@@ -31,7 +31,15 @@ export const SummaryInformationContainer: React.FC<ISummaryInformationContainer>
                         )
                         .map((el: any) => (
                             <>
-                                <Typography>{el.Country}</Typography>
+                                <Box marginBottom={2} marginTop={2}>
+                                    <Typography
+                                        align='center'
+                                        style={{ fontWeight: 'bold' }}
+                                        variant='h3'
+                                    >
+                                        {el.Country}
+                                    </Typography>
+                                </Box>
                                 <SummaryInformation summary={el} />
                             </>
                         ))}

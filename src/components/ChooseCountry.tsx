@@ -12,7 +12,13 @@ export const ChooseCountry = () => {
         <>
             <div style={{ height: '500px' }}>
                 <Box marginBottom={2} marginTop={2}>
-                    <Typography align='center'>Select country</Typography>
+                    <Typography
+                        align='center'
+                        style={{ fontWeight: 'bold' }}
+                        variant='h3'
+                    >
+                        Select a country
+                    </Typography>
                 </Box>
                 <div style={{ height: '300px' }}>
                     <ResponsiveGeoMap
