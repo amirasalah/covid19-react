@@ -13,14 +13,17 @@ export const SummaryInformationContainer: React.FC<ISummaryInformationContainer>
     selectedMethod,
 }) => {
     const store = StoreContainer.useContainer()
+
     React.useEffect(() => {
-        ;(async () => {
+        const fetchData = async () => {
             const res = await axios('https://api.covid19api.com/summary')
             store.changeCountriesSummary(res.data.Countries)
             store.changeGlobalSummary(res.data.Global)
             store.changeUpdateDate(res.data.Date)
-        })()
-    }, [store])
+        }
+        fetchData()
+        // eslint-disable-next-line
+    }, [])
     return (
         <>
             {store.updateDate && (
