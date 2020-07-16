@@ -24,7 +24,7 @@ export const Home = () => {
                 </Typography>
             </Box>
             <Box marginBottom={2}>
-                <Typography variant='h6'>
+                <Typography variant='h6' align='center'>
                     Please choose the preferred scope:
                 </Typography>
             </Box>

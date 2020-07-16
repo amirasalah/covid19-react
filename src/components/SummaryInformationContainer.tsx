@@ -4,7 +4,8 @@ import { ChooseCountry } from './ChooseCountry'
 import { SummaryInformation } from './SummaryInformation'
 import axios from 'axios'
 import { Typography, Box } from '@material-ui/core'
-
+import Moment from 'react-moment'
+import 'moment-timezone'
 interface ISummaryInformationContainer {
     selectedMethod: number
 }
@@ -17,10 +18,28 @@ export const SummaryInformationContainer: React.FC<ISummaryInformationContainer>
             const res = await axios('https://api.covid19api.com/summary')
             store.changeCountriesSummary(res.data.Countries)
             store.changeGlobalSummary(res.data.Global)
+            store.changeUpdateDate(res.data.Date)
         })()
     }, [store])
     return (
         <>
+            {store.updateDate && (
+                <Box marginBottom={2} marginTop={2}>
+                    <Typography
+                        align='center'
+                        style={{ fontWeight: 'bold' }}
+                        variant='h5'
+                    >
+                        Last Update
+                    </Typography>
+                    <Typography align='center' variant='h6'>
+                        <Moment fromNow ago>
+                            {store.updateDate}
+                        </Moment>{' '}
+                        ago
+                    </Typography>
+                </Box>
+            )}
             {selectedMethod === 2 ? (
                 <>
                     <ChooseCountry />
@@ -31,7 +50,7 @@ export const SummaryInformationContainer: React.FC<ISummaryInformationContainer>
                         )
                         .map((el: any) => (
                             <>
-                                <Box marginBottom={2} marginTop={2}>
+                                <Box marginBottom={2}>
                                     <Typography
                                         align='center'
                                         style={{ fontWeight: 'bold' }}

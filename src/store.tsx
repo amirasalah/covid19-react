@@ -14,6 +14,10 @@ export const useStore = () => {
     const changeCountriesSummary = (value: []) => {
         setCountriesSummary(value)
     }
+    const [updateDate, setUpdateDate] = useState('')
+    const changeUpdateDate = (value: string) => {
+        setUpdateDate(value)
+    }
     return {
         selectedCountry,
         changeCountry,
@@ -21,6 +25,8 @@ export const useStore = () => {
         changeGlobalSummary,
         countriesSummary,
         changeCountriesSummary,
+        updateDate,
+        changeUpdateDate,
     }
 }
 
