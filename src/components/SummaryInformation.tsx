@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Grid } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import { ReactComponent as DeathIcon } from '../icons/004-man.svg'
 import { ReactComponent as NewIcon } from '../icons/049-quarantine.svg'
 import { ReactComponent as Death2Icon } from '../icons/045-ambulance.svg'

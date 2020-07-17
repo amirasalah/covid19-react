@@ -14,6 +14,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@types/react-scroll": "^1.5.5",
     "add": "^2.0.6",
     "axios": "^0.19.2",
     "cypress": "^4.10.0",
@@ -25,6 +26,7 @@
     "react-moment": "^0.9.7",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-scroll": "^1.8.0",
     "typescript": "~3.7.2",
     "unstated-next": "^1.1.0",
     "yarn": "^1.22.4"

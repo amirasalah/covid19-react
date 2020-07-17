@@ -1,11 +1,14 @@
 import React from 'react'
-import { ResponsiveGeoMap } from '@nivo/geo'
+import { ResponsiveGeoMap, GeoMapEventHandler } from '@nivo/geo'
 import countries from '../shared/worldCountries.json'
 import { StoreContainer } from '../store'
 import { Typography } from '@material-ui/core'
 import { Box } from '@material-ui/core'
 
-export const ChooseCountry: React.FC = () => {
+interface IChooseCountry {
+    scrollPage: Function
+}
+export const ChooseCountry: React.FC<IChooseCountry> = ({ scrollPage }) => {
     const store = StoreContainer.useContainer()
 
     return (
@@ -29,7 +32,10 @@ export const ChooseCountry: React.FC = () => {
                         fillColor='#eeeeee'
                         borderWidth={0.5}
                         borderColor='#333333'
-                        onClick={event => store.changeCountry(event.id)}
+                        onClick={event => {
+                            store.changeCountry(event.id)
+                            scrollPage()
+                        }}
                     />
                 </Box>
             </Box>
