@@ -5,12 +5,12 @@ import { StoreContainer } from '../store'
 import { Typography } from '@material-ui/core'
 import { Box } from '@material-ui/core'
 
-export const ChooseCountry = () => {
+export const ChooseCountry: React.FC = () => {
     const store = StoreContainer.useContainer()
 
     return (
         <>
-            <div style={{ height: '500px' }}>
+            <Box style={{ height: '500px' }}>
                 <Box marginBottom={2} marginTop={2}>
                     <Typography
                         align='center'
@@ -20,7 +20,7 @@ export const ChooseCountry = () => {
                         Select a country
                     </Typography>
                 </Box>
-                <div style={{ height: '300px' }}>
+                <Box style={{ height: '300px' }}>
                     <ResponsiveGeoMap
                         features={countries.features}
                         margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
@@ -29,12 +29,10 @@ export const ChooseCountry = () => {
                         fillColor='#eeeeee'
                         borderWidth={0.5}
                         borderColor='#333333'
-                        // enableGraticule={true}
-                        graticuleLineColor='#666666'
                         onClick={event => store.changeCountry(event.id)}
                     />
-                </div>
-            </div>
+                </Box>
+            </Box>
         </>
     )
 }
