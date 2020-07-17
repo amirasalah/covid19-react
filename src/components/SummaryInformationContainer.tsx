@@ -2,10 +2,10 @@ import React from 'react'
 import { StoreContainer } from '../store'
 import { ChooseCountry } from './ChooseCountry'
 import { SummaryInformation } from './SummaryInformation'
-import axios from 'axios'
 import { Typography, Box } from '@material-ui/core'
 import Moment from 'react-moment'
 import 'moment-timezone'
+import { instance } from '../apis/instance'
 interface ISummaryInformationContainer {
     selectedMethod: number
 }
@@ -16,7 +16,7 @@ export const SummaryInformationContainer: React.FC<ISummaryInformationContainer>
 
     React.useEffect(() => {
         const fetchData = async () => {
-            const res = await axios('https://api.covid19api.com/summary')
+            const res = await instance.get('summary')
             store.changeCountriesSummary(res.data.Countries)
             store.changeGlobalSummary(res.data.Global)
             store.changeUpdateDate(res.data.Date)
