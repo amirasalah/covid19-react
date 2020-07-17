@@ -34,7 +34,7 @@ export const SummaryInformation: React.FC<ISummaryInformation> = ({
     return (
         <Grid container spacing={3}>
             <SummaryContainer>
-                <DeathIcon style={iconStyle} />
+                <NewIcon style={iconStyle} />
                 <CardTitle variantType='h6'>New Confirmed Cases</CardTitle>
                 <CardTitle variantType='h2'>{NewConfirmed}</CardTitle>
             </SummaryContainer>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ResponsiveGeoMap, GeoMapEventHandler } from '@nivo/geo'
+import { ResponsiveGeoMap } from '@nivo/geo'
 import countries from '../shared/worldCountries.json'
 import { StoreContainer } from '../store'
 import { Typography } from '@material-ui/core'
