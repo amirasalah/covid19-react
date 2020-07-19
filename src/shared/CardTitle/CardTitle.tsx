@@ -2,7 +2,7 @@ import React from 'react'
 import { Typography } from '@material-ui/core'
 
 interface ICardTitle {
-    children: string
+    children: string | JSX.Element
     variantType:
         | 'button'
         | 'caption'

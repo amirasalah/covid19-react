@@ -8,6 +8,7 @@ import { ReactComponent as TotalConfirmedIcon } from '../icons/036-sore throat.s
 import { ReactComponent as TotalRecoveredIcon } from '../icons/016-family.svg'
 import { SummaryContainer } from '../shared/summaryContainer/summaryContainer'
 import { CardTitle } from '../shared/CardTitle/CardTitle'
+import { default as NumberFormat } from 'react-number-format'
 
 interface ISummaryInformation {
     summary: {
@@ -36,32 +37,69 @@ export const SummaryInformation: React.FC<ISummaryInformation> = ({
             <SummaryContainer>
                 <NewIcon style={iconStyle} />
                 <CardTitle variantType='h6'>New Confirmed Cases</CardTitle>
-                <CardTitle variantType='h2'>{NewConfirmed}</CardTitle>
+
+                <CardTitle variantType='h2'>
+                    <NumberFormat
+                        value={NewConfirmed}
+                        displayType={'text'}
+                        thousandSeparator={true}
+                    />
+                </CardTitle>
             </SummaryContainer>
             <SummaryContainer>
                 <Death2Icon style={iconStyle} />
                 <CardTitle variantType='h6'>New Deaths Cases</CardTitle>
-                <CardTitle variantType='h2'>{NewDeaths}</CardTitle>
+                <CardTitle variantType='h2'>
+                    <NumberFormat
+                        value={NewDeaths}
+                        displayType={'text'}
+                        thousandSeparator={true}
+                    />
+                </CardTitle>
             </SummaryContainer>
             <SummaryContainer>
                 <RecoveredIcon style={iconStyle} />
                 <CardTitle variantType='h6'>New Recovered Cases</CardTitle>
-                <CardTitle variantType='h2'>{NewRecovered}</CardTitle>
+                <CardTitle variantType='h2'>
+                    <NumberFormat
+                        value={NewRecovered}
+                        displayType={'text'}
+                        thousandSeparator={true}
+                    />
+                </CardTitle>
             </SummaryContainer>
             <SummaryContainer>
                 <TotalConfirmedIcon style={iconStyle} />
                 <CardTitle variantType='h6'>Total Confirmed Cases</CardTitle>
-                <CardTitle variantType='h2'>{TotalConfirmed}</CardTitle>
+                <CardTitle variantType='h2'>
+                    <NumberFormat
+                        value={TotalConfirmed}
+                        displayType={'text'}
+                        thousandSeparator={true}
+                    />
+                </CardTitle>
             </SummaryContainer>
             <SummaryContainer>
                 <DeathIcon style={iconStyle} />
                 <CardTitle variantType='h6'>Total Deaths Cases</CardTitle>
-                <CardTitle variantType='h2'>{TotalDeaths}</CardTitle>
+                <CardTitle variantType='h2'>
+                    <NumberFormat
+                        value={TotalDeaths}
+                        displayType={'text'}
+                        thousandSeparator={true}
+                    />
+                </CardTitle>
             </SummaryContainer>
             <SummaryContainer>
                 <TotalRecoveredIcon style={iconStyle} />
                 <CardTitle variantType='h6'>Total Recovered Cases:</CardTitle>
-                <CardTitle variantType='h2'>{TotalRecovered}</CardTitle>
+                <CardTitle variantType='h2'>
+                    <NumberFormat
+                        value={TotalRecovered}
+                        displayType={'text'}
+                        thousandSeparator={true}
+                    />
+                </CardTitle>
             </SummaryContainer>
         </Grid>
     )
