@@ -5,9 +5,6 @@ import { StoreContainer } from '../store'
 import { Typography } from '@material-ui/core'
 import { Box } from '@material-ui/core'
 
-interface IChooseCountry {
-    scrollPage: Function
-}
 export const ChooseCountry: React.FC<IChooseCountry> = ({ scrollPage }) => {
     const store = StoreContainer.useContainer()
 

@@ -10,16 +10,7 @@ import { SummaryContainer } from '../shared/summaryContainer/summaryContainer'
 import { CardTitle } from '../shared/CardTitle/CardTitle'
 import { default as NumberFormat } from 'react-number-format'
 
-interface ISummaryInformation {
-    summary: {
-        NewConfirmed: string
-        NewDeaths: string
-        NewRecovered: string
-        TotalConfirmed: string
-        TotalDeaths: string
-        TotalRecovered: string
-    }
-}
+
 const iconStyle = { width: '50px', height: '50px' }
 export const SummaryInformation: React.FC<ISummaryInformation> = ({
     summary,

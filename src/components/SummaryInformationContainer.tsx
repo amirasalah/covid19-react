@@ -7,9 +7,7 @@ import Moment from 'react-moment'
 import 'moment-timezone'
 import { instance } from '../apis/instance'
 import { Element, scroller } from 'react-scroll'
-interface ISummaryInformationContainer {
-    selectedMethod: number
-}
+
 const scrollPage = () => {
     console.log('sdcs')
     scroller.scrollTo('summaryContainer', {
