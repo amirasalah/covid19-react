@@ -15,6 +15,12 @@ interface ICountryDetails {}
 interface ISummaryInformationContainer {
     selectedMethod: number
 }
+// interface ICalendar {
+//     data?: {
+//         day: string
+//         value: number
+//     }[]
+// }
 interface ICardTitle {
     children: string | JSX.Element
     variantType:

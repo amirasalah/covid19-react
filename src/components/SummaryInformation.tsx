@@ -7,7 +7,7 @@ import { ReactComponent as RecoveredIcon } from '../icons/050-elbow.svg'
 import { ReactComponent as TotalConfirmedIcon } from '../icons/036-sore throat.svg'
 import { ReactComponent as TotalRecoveredIcon } from '../icons/016-family.svg'
 import { SummaryContainer } from '../shared/summaryContainer/summaryContainer'
-import { CardTitle } from '../shared/CardTitle/CardTitle'
+import { CardTitle } from '../shared/cardTitle/CardTitle'
 import { default as NumberFormat } from 'react-number-format'
 
 
@@ -28,7 +28,6 @@ export const SummaryInformation: React.FC<ISummaryInformation> = ({
             <SummaryContainer>
                 <NewIcon style={iconStyle} />
                 <CardTitle variantType='h6'>New Confirmed Cases</CardTitle>
-
                 <CardTitle variantType='h2'>
                     <NumberFormat
                         value={NewConfirmed}

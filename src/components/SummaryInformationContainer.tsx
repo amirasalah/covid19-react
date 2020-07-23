@@ -7,10 +7,9 @@ import Moment from 'react-moment'
 import 'moment-timezone'
 import { instance } from '../apis/instance'
 import { Element, scroller } from 'react-scroll'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const scrollPage = () => {
-    console.log('sdcs')
     scroller.scrollTo('summaryContainer', {
         duration: 500,
         delay: 100,
@@ -75,10 +74,21 @@ export const SummaryInformationContainer: React.FC<ISummaryInformationContainer>
                                             >
                                                 {el.Country}
                                             </Typography>
-                                            <Link to={`/${el.Slug}`}>
-                                                Check {el.Country}'s cases
-                                                history
-                                            </Link>
+                                            <Typography
+                                                align='center'
+                                                variant='h6'
+                                            >
+                                                <NavLink
+                                                    style={{
+                                                        color: '#FF748F',
+                                                        fontWeight: 'bold',
+                                                    }}
+                                                    to={`/${el.Slug}`}
+                                                >
+                                                    Check {el.Country}'s cases
+                                                    history
+                                                </NavLink>
+                                            </Typography>
                                         </Box>
 
                                         <SummaryInformation summary={el} />
