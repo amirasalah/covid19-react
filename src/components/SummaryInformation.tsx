@@ -6,10 +6,9 @@ import { ReactComponent as Death2Icon } from '../icons/045-ambulance.svg'
 import { ReactComponent as RecoveredIcon } from '../icons/050-elbow.svg'
 import { ReactComponent as TotalConfirmedIcon } from '../icons/036-sore throat.svg'
 import { ReactComponent as TotalRecoveredIcon } from '../icons/016-family.svg'
-import { SummaryContainer } from '../shared/summaryContainer/summaryContainer'
-import { CardTitle } from '../shared/cardTitle/CardTitle'
 import { default as NumberFormat } from 'react-number-format'
-
+import { CardTitle } from '../shared/cardtitle/CardTitle'
+import { SummaryContainer } from '../shared/summarycontainer/SummaryContainer'
 
 const iconStyle = { width: '50px', height: '50px' }
 export const SummaryInformation: React.FC<ISummaryInformation> = ({
