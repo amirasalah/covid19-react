@@ -11,6 +11,7 @@ interface ISummaryInformation {
         TotalRecovered: string
     }
 }
+interface ICountryDetails {}
 interface ISummaryInformationContainer {
     selectedMethod: number
 }

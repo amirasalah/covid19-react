@@ -7,6 +7,7 @@ import Moment from 'react-moment'
 import 'moment-timezone'
 import { instance } from '../apis/instance'
 import { Element, scroller } from 'react-scroll'
+import { Link } from 'react-router-dom'
 
 const scrollPage = () => {
     console.log('sdcs')
@@ -62,21 +63,28 @@ export const SummaryInformationContainer: React.FC<ISummaryInformationContainer>
                                     Country.CountryCode ===
                                     store.selectedCountry,
                             )
-                            .map((el: any) => (
-                                <>
-                                    <Box marginBottom={2}>
-                                        <Typography
-                                            align='center'
-                                            style={{ fontWeight: 'bold' }}
-                                            variant='h3'
-                                        >
-                                            {el.Country}
-                                        </Typography>
-                                    </Box>
+                            .map((el: any) => {
+                                console.log(el)
+                                return (
+                                    <>
+                                        <Box marginBottom={2}>
+                                            <Typography
+                                                align='center'
+                                                style={{ fontWeight: 'bold' }}
+                                                variant='h3'
+                                            >
+                                                {el.Country}
+                                            </Typography>
+                                            <Link to={`/${el.Slug}`}>
+                                                Check {el.Country}'s cases
+                                                history
+                                            </Link>
+                                        </Box>
 
-                                    <SummaryInformation summary={el} />
-                                </>
-                            ))}
+                                        <SummaryInformation summary={el} />
+                                    </>
+                                )
+                            })}
                     </Element>
                 </>
             ) : (
