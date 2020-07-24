@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from '../shared/header/Header'
+import { Header } from '../shared/Header'
 // import { Footer } from '../shared/footer/Footer'
 import { Home } from '../pages/Home'
 import { StoreContainer } from '../store'

@@ -7,9 +7,9 @@ import { ReactComponent as RecoveredIcon } from '../icons/050-elbow.svg'
 import { ReactComponent as TotalConfirmedIcon } from '../icons/036-sore throat.svg'
 import { ReactComponent as TotalRecoveredIcon } from '../icons/016-family.svg'
 import { default as NumberFormat } from 'react-number-format'
-import { CardTitle } from '../shared/cardtitle/CardTitle'
-import { SummaryContainer } from '../shared/summarycontainer/SummaryContainer'
+import { CardTitle } from '../shared/CardTitle'
 import { useTranslation } from 'react-i18next'
+import { SummaryContainer } from '../shared/SummaryContainer'
 
 const iconStyle = { width: '50px', height: '50px' }
 export const SummaryInformation: React.FC<ISummaryInformation> = ({
