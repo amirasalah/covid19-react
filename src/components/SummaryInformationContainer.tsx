@@ -8,6 +8,7 @@ import 'moment-timezone'
 import { instance } from '../apis/instance'
 import { Element, scroller } from 'react-scroll'
 import { NavLink } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const scrollPage = () => {
     scroller.scrollTo('summaryContainer', {
@@ -22,7 +23,7 @@ export const SummaryInformationContainer: React.FC<ISummaryInformationContainer>
     selectedMethod,
 }) => {
     const store = StoreContainer.useContainer()
-
+    const { t } = useTranslation()
     React.useEffect(() => {
         const fetchData = async () => {
             const res = await instance.get('summary')
@@ -42,7 +43,7 @@ export const SummaryInformationContainer: React.FC<ISummaryInformationContainer>
                         style={{ fontWeight: 'bold' }}
                         variant='h5'
                     >
-                        Last Update
+                        {t('Last Update')}
                     </Typography>
                     <Typography align='center' variant='h6'>
                         <Moment fromNow ago>

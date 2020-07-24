@@ -6,9 +6,11 @@ import { Calendar } from './Calendar'
 import { Typography } from '@material-ui/core'
 import { Box } from '@material-ui/core'
 import moment from 'moment'
+import { useTranslation } from 'react-i18next'
 
 export const CountryDetails: React.FC<ICountryDetails> = () => {
     let { country } = useParams()
+    const { t } = useTranslation()
     const [confirmedData, setConfirmedData] = React.useState([])
     const [deathsData, setDeathsData] = React.useState([])
     const [activeData, setActiveData] = React.useState([])
@@ -61,19 +63,19 @@ export const CountryDetails: React.FC<ICountryDetails> = () => {
                 </Typography>
             </Box>
             <Typography style={{ fontWeight: 'bold' }} variant='h5'>
-                Confirmed Cases
+                {t('Confirmed Cases')}
             </Typography>
             <Calendar data={confirmedData} />
             <Typography style={{ fontWeight: 'bold' }} variant='h5'>
-                Deaths Cases
+                {t('Deaths Cases')}
             </Typography>
             <Calendar data={deathsData} />
             <Typography style={{ fontWeight: 'bold' }} variant='h5'>
-                Active Cases
+                {t('Active Cases')}
             </Typography>
             <Calendar data={activeData} />
             <Typography style={{ fontWeight: 'bold' }} variant='h5'>
-                Recovered Cases
+                {t('Recovered Cases')}
             </Typography>
             <Calendar data={recoveredData} />
         </Container>

@@ -9,6 +9,7 @@ import { ReactComponent as TotalRecoveredIcon } from '../icons/016-family.svg'
 import { default as NumberFormat } from 'react-number-format'
 import { CardTitle } from '../shared/cardtitle/CardTitle'
 import { SummaryContainer } from '../shared/summarycontainer/SummaryContainer'
+import { useTranslation } from 'react-i18next'
 
 const iconStyle = { width: '50px', height: '50px' }
 export const SummaryInformation: React.FC<ISummaryInformation> = ({
@@ -22,11 +23,14 @@ export const SummaryInformation: React.FC<ISummaryInformation> = ({
         TotalDeaths,
         TotalRecovered,
     } = summary
+    const { t } = useTranslation()
     return (
         <Grid container spacing={3}>
             <SummaryContainer>
                 <NewIcon style={iconStyle} />
-                <CardTitle variantType='h6'>New Confirmed Cases</CardTitle>
+                <CardTitle variantType='h6'>
+                    {t('New Confirmed Cases')}
+                </CardTitle>
                 <CardTitle variantType='h2'>
                     <NumberFormat
                         value={NewConfirmed}
@@ -37,7 +41,7 @@ export const SummaryInformation: React.FC<ISummaryInformation> = ({
             </SummaryContainer>
             <SummaryContainer>
                 <Death2Icon style={iconStyle} />
-                <CardTitle variantType='h6'>New Deaths Cases</CardTitle>
+                <CardTitle variantType='h6'>{t('New Deaths Cases')}</CardTitle>
                 <CardTitle variantType='h2'>
                     <NumberFormat
                         value={NewDeaths}
@@ -48,7 +52,9 @@ export const SummaryInformation: React.FC<ISummaryInformation> = ({
             </SummaryContainer>
             <SummaryContainer>
                 <RecoveredIcon style={iconStyle} />
-                <CardTitle variantType='h6'>New Recovered Cases</CardTitle>
+                <CardTitle variantType='h6'>
+                    {t('New Recovered Cases')}
+                </CardTitle>
                 <CardTitle variantType='h2'>
                     <NumberFormat
                         value={NewRecovered}
@@ -59,7 +65,9 @@ export const SummaryInformation: React.FC<ISummaryInformation> = ({
             </SummaryContainer>
             <SummaryContainer>
                 <TotalConfirmedIcon style={iconStyle} />
-                <CardTitle variantType='h6'>Total Confirmed Cases</CardTitle>
+                <CardTitle variantType='h6'>
+                    {t('Total Confirmed Cases')}
+                </CardTitle>
                 <CardTitle variantType='h2'>
                     <NumberFormat
                         value={TotalConfirmed}

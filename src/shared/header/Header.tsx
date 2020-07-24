@@ -7,11 +7,13 @@ import i18n from 'i18next'
 import { useTranslation } from 'react-i18next'
 
 export const Header = () => {
+    const { t } = useTranslation()
     const changeLanguage = (lng: string) => {
         i18n.changeLanguage(lng)
+        i18n.dir() === 'rtl'
+            ? (document.body.style.direction = 'rtl')
+            : (document.body.style.direction = 'ltr')
     }
-    const { t } = useTranslation()
-
     return (
         <AppBar position='static'>
             <MenuList>

@@ -41,7 +41,7 @@ export const Home = () => {
                                 style={{ height: '70px', fontWeight: 'bold' }}
                                 onClick={() => changeScope(index + 1)}
                             >
-                                {button}
+                                {t(`${button}`)}
                             </Button>
                         </Grid>
                     )
