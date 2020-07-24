@@ -1,3 +1,7 @@
+//Intersection Types
+//Union Types
+//Generic Types
+
 interface IChooseCountry {
     scrollPage: Function
 }

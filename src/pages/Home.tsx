@@ -4,13 +4,15 @@ import { Box } from '@material-ui/core'
 import { SummaryInformationContainer } from '../components/SummaryInformationContainer'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
+import { useTranslation } from 'react-i18next'
 
-const buttons = ['world wide', 'choose country']
 export const Home = () => {
     const [searchScope, setSearchScope] = React.useState(0)
     const changeScope = (scopeIndex: number) => {
         setSearchScope(scopeIndex)
     }
+    const { t } = useTranslation()
+    const buttons = ['world wide', 'choose country']
 
     return (
         <>
@@ -20,12 +22,12 @@ export const Home = () => {
                     variant='h2'
                     align='center'
                 >
-                    Get Latest Covid-19 updates
+                    {t('Get Latest Covid-19 updates')}
                 </Typography>
             </Box>
             <Box marginBottom={2}>
                 <Typography variant='h6' align='center'>
-                    Please choose your preferred scope:
+                    {t('Please choose your preferred scope')}
                 </Typography>
             </Box>
             <Grid spacing={3} container>

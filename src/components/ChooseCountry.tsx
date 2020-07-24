@@ -4,9 +4,11 @@ import countries from '../shared/worldCountries.json'
 import { StoreContainer } from '../store'
 import { Typography } from '@material-ui/core'
 import { Box } from '@material-ui/core'
+import { useTranslation } from 'react-i18next'
 
 export const ChooseCountry: React.FC<IChooseCountry> = ({ scrollPage }) => {
     const store = StoreContainer.useContainer()
+    const { t } = useTranslation()
 
     return (
         <>
@@ -17,7 +19,7 @@ export const ChooseCountry: React.FC<IChooseCountry> = ({ scrollPage }) => {
                         style={{ fontWeight: 'bold' }}
                         variant='h3'
                     >
-                        Select a country
+                        {t('Select a country')}
                     </Typography>
                 </Box>
                 <Box style={{ height: '300px' }}>
