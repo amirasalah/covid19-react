@@ -1,5 +1,5 @@
 import React from 'react'
-import { MenuList } from '@material-ui/core'
+import { MenuList, Grid, Button } from '@material-ui/core'
 import Container from '@material-ui/core/Container'
 import { AppBar } from '@material-ui/core'
 import { NavLink } from 'react-router-dom'
@@ -16,26 +16,46 @@ export const Header = () => {
     }
     return (
         <AppBar position='static'>
-            <MenuList>
-                <Container>
-                    <NavLink
-                        style={{
-                            color: '#fff',
-                            textDecoration: 'none',
-                            fontWeight: 'bold',
-                        }}
-                        to='/'
-                    >
-                        {t('Home Page')}
-                    </NavLink>
-                    <button onClick={() => changeLanguage('en')}>
-                        English
-                    </button>
-                    <button onClick={() => changeLanguage('ar')}>
-                        العربية
-                    </button>
-                </Container>
-            </MenuList>
+            <Container>
+                <MenuList>
+                    <Grid container justify='space-between'>
+                        <Grid item>
+                            <Button
+                                variant='contained'
+                                onClick={() => changeLanguage('en')}
+                                color='primary'
+                            >
+                                <NavLink
+                                    style={{
+                                        color: '#fff',
+                                        textDecoration: 'none',
+                                        fontWeight: 'bold',
+                                    }}
+                                    to='/'
+                                >
+                                    {t('Home Page')}
+                                </NavLink>
+                            </Button>
+                        </Grid>
+                        <Grid item>
+                            <Button
+                                variant='contained'
+                                onClick={() => changeLanguage('en')}
+                                color='primary'
+                            >
+                                English
+                            </Button>
+                            <Button
+                                variant='contained'
+                                onClick={() => changeLanguage('ar')}
+                                color='primary'
+                            >
+                                العربية
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </MenuList>
+            </Container>
         </AppBar>
     )
 }
