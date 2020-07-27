@@ -7,14 +7,19 @@ import { Typography } from '@material-ui/core'
 import { Box } from '@material-ui/core'
 import moment from 'moment'
 import { useTranslation } from 'react-i18next'
+import { CalendarDatum } from '@nivo/calendar'
 
-export const CountryDetails: React.FC<ICountryDetails> = () => {
+export const CountryDetails: React.FC = () => {
     let { country } = useParams()
     const { t } = useTranslation()
-    const [confirmedData, setConfirmedData] = React.useState([])
-    const [deathsData, setDeathsData] = React.useState([])
-    const [activeData, setActiveData] = React.useState([])
-    const [recoveredData, setRecoveredData] = React.useState([])
+    const [confirmedData, setConfirmedData] = React.useState<CalendarDatum[]>(
+        [],
+    )
+    const [deathsData, setDeathsData] = React.useState<CalendarDatum[]>([])
+    const [activeData, setActiveData] = React.useState<CalendarDatum[]>([])
+    const [recoveredData, setRecoveredData] = React.useState<CalendarDatum[]>(
+        [],
+    )
 
     React.useEffect(() => {
         const fetchData = async () => {

@@ -5,26 +5,23 @@
 interface IChooseCountry {
     scrollPage: Function
 }
-interface ISummaryInformation {
-    summary: {
-        NewConfirmed: string
-        NewDeaths: string
-        NewRecovered: string
-        TotalConfirmed: string
-        TotalDeaths: string
-        TotalRecovered: string
-    }
+interface IChangeGlobalSummary {
+    NewConfirmed: number
+    NewDeaths: number
+    NewRecovered: number
+    TotalConfirmed: number
+    TotalDeaths: number
+    TotalRecovered: number
 }
-interface ICountryDetails {}
+interface ISummaryInformation {
+    summary: IChangeGlobalSummary
+}
+interface ICalendar {
+    data: ICalendarContent
+}
 interface ISummaryInformationContainer {
     selectedMethod: number
 }
-// interface ICalendar {
-//     data?: {
-//         day: string
-//         value: number
-//     }[]
-// }
 interface ICardTitle {
     children: string | JSX.Element
     variantType:

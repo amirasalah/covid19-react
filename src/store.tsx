@@ -6,8 +6,15 @@ export const useStore = () => {
     const changeCountry = (country: string) => {
         setSelectedCountry(country)
     }
-    const [globalSummary, setGlobalSummary] = useState<any>()
-    const changeGlobalSummary = (value: any) => {
+    const [globalSummary, setGlobalSummary] = useState<IChangeGlobalSummary>({
+        NewConfirmed: 0,
+        NewDeaths: 0,
+        NewRecovered: 0,
+        TotalConfirmed: 0,
+        TotalDeaths: 0,
+        TotalRecovered: 0,
+    })
+    const changeGlobalSummary = (value: IChangeGlobalSummary) => {
         setGlobalSummary(value)
     }
     const [countriesSummary, setCountriesSummary] = useState<[]>([])
