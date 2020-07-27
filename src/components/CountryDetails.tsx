@@ -24,28 +24,28 @@ export const CountryDetails: React.FC = () => {
     React.useEffect(() => {
         const fetchData = async () => {
             const res = await instance.get(`dayone/country/${country}`)
-            const confirmed = res.data.map((item: any) => {
+            const confirmed = res.data.map((item: IItem, index: number) => {
                 return {
                     day: moment(item.Date).format('YYYY-MM-DD'),
                     value: item.Confirmed,
                 }
             })
             setConfirmedData(confirmed)
-            const deaths = res.data.map((item: any) => {
+            const deaths = res.data.map((item: IItem) => {
                 return {
                     day: moment(item.Date).format('YYYY-MM-DD'),
                     value: item.Deaths,
                 }
             })
             setDeathsData(deaths)
-            const active = res.data.map((item: any) => {
+            const active = res.data.map((item: IItem) => {
                 return {
                     day: moment(item.Date).format('YYYY-MM-DD'),
                     value: item.Active,
                 }
             })
             setActiveData(active)
-            const recovered = res.data.map((item: any) => {
+            const recovered = res.data.map((item: IItem) => {
                 return {
                     day: moment(item.Date).format('YYYY-MM-DD'),
                     value: item.Recovered,

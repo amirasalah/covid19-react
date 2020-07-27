@@ -1,8 +1,13 @@
 import React from 'react'
 import { ResponsiveCalendar, CalendarDatum } from '@nivo/calendar'
 import { Box } from '@material-ui/core'
-
+import moment from 'moment'
 export const Calendar: React.FC<{ data: CalendarDatum[] }> = ({ data }) => {
+    let start, end
+    if (data.length) {
+        start = data[0].day
+        end = moment(Date.now()).format('YYYY-MM-DD')
+    }
     return (
         <Box style={{ height: '250px' }}>
             {data.length && (
@@ -15,8 +20,8 @@ export const Calendar: React.FC<{ data: CalendarDatum[] }> = ({ data }) => {
                     monthBorderColor='#ffffff'
                     dayBorderWidth={2}
                     dayBorderColor='#ffffff'
-                    from={`${data[0].day}`}
-                    to={`${data[data.length - 1]}`}
+                    from={`${start}`}
+                    to={`${end}`}
                 />
             )}
         </Box>

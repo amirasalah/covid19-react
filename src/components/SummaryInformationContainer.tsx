@@ -59,18 +59,22 @@ export const SummaryInformationContainer: React.FC<ISummaryInformationContainer>
                     <Element name='summaryContainer'>
                         {store.countriesSummary
                             .filter(
-                                (Country: any) =>
+                                (Country: {
+                                    CountryCode: string
+                                    selectedCountry: string
+                                }) =>
                                     Country.CountryCode ===
                                     store.selectedCountry,
                             )
-                            .map((el: any) => {
-                                console.log(el)
+                            .map((el: ISummaryElement, index: number) => {
                                 return (
-                                    <>
+                                    <Box key={index}>
                                         <Box marginBottom={2}>
                                             <Typography
                                                 align='center'
-                                                style={{ fontWeight: 'bold' }}
+                                                style={{
+                                                    fontWeight: 'bold',
+                                                }}
                                                 variant='h3'
                                             >
                                                 {el.Country}
@@ -93,7 +97,7 @@ export const SummaryInformationContainer: React.FC<ISummaryInformationContainer>
                                         </Box>
 
                                         <SummaryInformation summary={el} />
-                                    </>
+                                    </Box>
                                 )
                             })}
                     </Element>

@@ -12,9 +12,9 @@ import { useTranslation } from 'react-i18next'
 import { SummaryContainer } from '../shared/SummaryContainer'
 
 const iconStyle = { width: '50px', height: '50px' }
-export const SummaryInformation: React.FC<ISummaryInformation> = ({
-    summary,
-}) => {
+export const SummaryInformation: React.FC<{
+    summary: IChangeGlobalSummary
+}> = ({ summary }) => {
     const {
         NewConfirmed,
         NewDeaths,

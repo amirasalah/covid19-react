@@ -3,7 +3,6 @@ import { Typography } from '@material-ui/core'
 import { Box } from '@material-ui/core'
 import { SummaryInformationContainer } from '../components/SummaryInformationContainer'
 import Button from '@material-ui/core/Button'
-import Grid from '@material-ui/core/Grid'
 import { useTranslation } from 'react-i18next'
 
 export const Home = () => {
@@ -30,23 +29,31 @@ export const Home = () => {
                     {t('Please choose your preferred scope')}
                 </Typography>
             </Box>
-            <Grid spacing={3} container>
+            <Box width='100%'>
                 {buttons.map((button, index) => {
                     return (
-                        <Grid item xs={12}>
+                        <Box
+                            paddingTop={3}
+                            paddingBottom={3}
+                            key={index}
+                            width='100%'
+                        >
                             <Button
                                 variant='contained'
                                 color='primary'
                                 fullWidth={true}
-                                style={{ height: '70px', fontWeight: 'bold' }}
+                                style={{
+                                    height: '70px',
+                                    fontWeight: 'bold',
+                                }}
                                 onClick={() => changeScope(index + 1)}
                             >
                                 {t(`${button}`)}
                             </Button>
-                        </Grid>
+                        </Box>
                     )
                 })}
-            </Grid>
+            </Box>
             {searchScope > 0 && (
                 <Box marginBottom={5} marginTop={5}>
                     <SummaryInformationContainer selectedMethod={searchScope} />
