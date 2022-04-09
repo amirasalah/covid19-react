@@ -21,7 +21,7 @@
     "axios": "^0.19.2",
     "cypress": "^4.10.0",
     "i18next": "^19.6.2",
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "moment-timezone": "^0.5.31",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
